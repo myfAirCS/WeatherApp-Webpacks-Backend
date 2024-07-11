@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Weather App</title>
+    </head>
+    <body>
+        <main>
+            <div class="main-details">
+                <header>
+                    <p>WEATHER APP !</p>
+                </header>
+                <div class="Details">
+                    <!-- Skeleton Loader for Main Details -->
+                    <div id="skeleton-main" class="skeleton">
+                        <div class="skeleton-header"></div>
+                        <div class="skeleton-content sc"></div>
+                        <div class="skeleton-content sc"></div>
+                        <div class="skeleton-content sc"></div>
+                    </div>
+                    <!-- Actual Data -->
+                    <span id="temperature"></span>
+                    <span id="city"></span>
+                    <div class="time-date">
+                        <span id="time-date"></span>
+                    </div>
+                    <span id="condition"></span>
+                </div>
+            </div>
+            <div class="search-container">
+                <div class="search-bar">
+                    <div class="search-bar-container">
+                        <input type="search" name="Search" id="search-weather"
+                            placeholder="Name Of The City">
+                    </div>
+                    <hr>
+                </div>
+                <div class="weather-detail">
+                    <hr>
+                    <div id="details-parent" class="weather-detail-container">
+                        <h5>Weather Details</h5>
+
+                        <!-- Skeleton Loader for Weather Details -->
+
+                        <div class="detail-skeleton"
+                            id="weather-detail-skeleton">
+
+                            <div><p>Cloudy :</p><div
+                                    class="skeleton-content"></div>
+                            </div>
+                            <div><p>Humidity :</p><div
+                                    class="skeleton-content"></div>
+                            </div>
+                            <div><p>Wind Speed :</p><div
+                                    class="skeleton-content"></div>
+                            </div>
+                        </div>
+                        <!-- Actual Data -->
+
+                        <div id="detail-vals">
+                            <p>Cloudy :<span id="cloud-Val"></span></p>
+                            <p>Humidity :<span id="Humid-Val"></span></p>
+                            <p>Wind Speed :<span id="Wind-Val"></span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>

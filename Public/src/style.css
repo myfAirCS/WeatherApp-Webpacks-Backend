@@ -1,0 +1,153 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+body {
+  background: url(./assets/pexels-jplenio-1118873.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: "Poppins";
+  color: white;
+  width: 100vw;
+}
+
+hr {
+  width: 80%;
+  align-self: flex;
+}
+header {
+  @apply xl:text-4xl lg:text-2xl text-xl bg-transparent text-left p-8;
+}
+
+main {
+  @apply flex justify-between align-middle;
+  width: 100%;
+}
+
+.main-details {
+  flex: 1;
+  @apply flex flex-col flex-wrap justify-between;
+  margin-bottom: 7rem;
+}
+.search-container {
+  background-color: rgba(154, 141, 141, 0.148);
+  backdrop-filter: blur(4px);
+  flex: 0.7;
+  height: 100vh;
+  @apply flex flex-col justify-between pt-8 pb-8;
+  box-shadow: 10px 10px 10px rgba(154, 141, 141, 0.148);
+}
+
+.search-bar {
+  @apply flex flex-col justify-between items-center gap-2;
+}
+
+.search-bar-container {
+  @apply w-[80%] flex justify-evenly;
+}
+
+#search-weather {
+  @apply w-[80%] outline-none text-xs md:text-sm lg:text-base bg-transparent xl:text-xl;
+}
+
+.Details {
+  @apply flex flex-col justify-center gap-2 pl-10;
+}
+
+#temperature {
+  @apply lg:text-6xl font-semibold sm:text-3xl  sm:block text-lg;
+}
+
+#city {
+  @apply lg:text-xl text-sm sm:text-base font-semibold;
+}
+
+#time-date {
+  @apply lg:text-sm text-xs font-sans;
+}
+
+#condition {
+  @apply text-xs lg:text-base font-semibold;
+}
+
+.weather-detail {
+  @apply flex flex-col justify-evenly items-center;
+  flex: 0.5;
+}
+
+.weather-detail-container h5 {
+  @apply font-bold lg:text-xl xl:text-3xl;
+}
+.weather-detail-container p {
+  @apply lg:text-lg flex justify-between ml-2 mr-2  text-sm xl:text-2xl;
+}
+
+.weather-detail-container {
+  @apply h-[100%] w-[80%] flex flex-col justify-evenly;
+}
+
+#detail-vals {
+  @apply flex flex-col space-y-4 justify-evenly items-center w-[100%];
+}
+
+#detail-vals p {
+  @apply lg:text-lg flex justify-between ml-2 mr-2  text-sm xl:text-2xl w-[100%];
+}
+
+.container {
+  width: 40%;
+  margin: 0 auto;
+}
+
+.skeleton {
+  animation: shimmer 1.5s infinite linear;
+}
+
+.skeleton-header,
+.skeleton-content {
+  background-color: #cccccc3a;
+  backdrop-filter: blur(10px);
+  border-radius: 4px;
+}
+
+.skeleton-header {
+  width: 20%;
+  height: 60%;
+}
+
+.sc {
+  width: 40%;
+}
+
+.skeleton-header {
+  height: 30px;
+  margin: 10px 0;
+}
+
+.skeleton-content {
+  height: 20px;
+  margin: 10px 0;
+  flex: 0.3;
+}
+
+.detail-skeleton {
+  @apply flex flex-col justify-evenly items-center;
+  flex: 0.5;
+}
+
+.detail-skeleton p {
+  @apply lg:text-lg flex justify-between ml-2 mr-2  text-sm xl:text-2xl;
+}
+.detail-skeleton div {
+  @apply lg:text-lg flex justify-between ml-2 mr-2  text-sm xl:text-2xl w-[100%];
+}
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
