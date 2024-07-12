@@ -1,24 +1,25 @@
-export const addSkeletonBeforeLoading = (check: string): Boolean => {
-  if (check != "") {
-    const detailSkeleton = document.getElementById("weather-detail-skeleton");
+import { changeElementToBlock } from "../../utils/changeElementToBlock";
+import { hideElement } from "../../utils/hideElement";
 
-    const skeletonMain = document.getElementById("skeleton-main");
-    const temperature = document.getElementById("temperature");
-    const city = document.getElementById("city");
-    const timeDate = document.getElementById("time-date");
-    const condition = document.getElementById("condition");
-    const detailVals = document.getElementById("detail-vals");
+export const addSkeletonBeforeLoading = (check: string): boolean => {
+  if (check == "") return false;
+  const detailSkeleton = document.getElementById("weather-detail-skeleton");
 
-    if (skeletonMain) skeletonMain.style.display = "block";
-    if (detailSkeleton) detailSkeleton.style.display = "block";
+  const skeletonMain = document.getElementById("skeleton-main");
+  const temperature = document.getElementById("temperature");
+  const city = document.getElementById("city");
+  const timeDate = document.getElementById("time-date");
+  const condition = document.getElementById("condition");
+  const detailVals = document.getElementById("detail-vals");
 
-    if (temperature) temperature.style.display = "none";
-    if (city) city.style.display = "none";
-    if (timeDate) timeDate.style.display = "none";
-    if (condition) condition.style.display = "none";
+  if (skeletonMain) changeElementToBlock(skeletonMain);
+  if (detailSkeleton) changeElementToBlock(detailSkeleton);
 
-    if (detailVals) detailVals.style.display = "none";
-    return true;
-  }
-  return false;
+  if (temperature) hideElement(temperature);
+  if (city) hideElement(city);
+  if (timeDate) hideElement(timeDate);
+  if (condition) hideElement(condition);
+
+  if (detailVals) hideElement(detailVals);
+  return true;
 };

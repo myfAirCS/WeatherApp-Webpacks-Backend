@@ -1,6 +1,6 @@
 export async function appendingValuesToThePage(data: any) {
   try {
-    const cloudVal = document.getElementById("cloud-Val") as HTMLElement;
+    const cloudVal = document.getElementById("Cloud-Val") as HTMLElement;
     const humidVal = document.getElementById("Humid-Val");
     const windVal = document.getElementById("Wind-Val");
 

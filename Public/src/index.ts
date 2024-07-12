@@ -4,13 +4,20 @@ import { removeSkeletonBeforeAppending } from "./Functions/display Functionality
 import { fetchWeatherDataRequest } from "./Functions/fetchData Functionality/fetchWeatherDataRequest";
 import { returningDataAfterFetching } from "./Functions/fetchData Functionality/request/returningDataAfterFetching";
 import { returnsValueFromTheSearchBar } from "./Functions/fetchData Functionality/returnsValueFromTheSearchBar";
+
 import "./style.css";
+import { getCountryFromSessionStorage } from "./utils/getCountryFromSessionStorage";
+import { storeCountryToSessionStorage } from "./utils/storeCountryToSessionsStorage";
 
 (async () => {
-  const Data = await fetchWeatherDataRequest("Islamabad");
+  let country = getCountryFromSessionStorage();
+  if (country == "null") {
+    country = "Islamabad";
+  }
+
+  const Data = await fetchWeatherDataRequest(country);
 
   removeSkeletonBeforeAppending(Data);
-
   await appendingValuesToThePage(Data);
 })();
 
@@ -20,9 +27,11 @@ if (!searchBar) throw new Error("Search");
 searchBar.addEventListener("keydown", async (event) => {
   if (event.key == "Enter") {
     const check = returnsValueFromTheSearchBar();
+    storeCountryToSessionStorage(check);
 
     const displayNone = addSkeletonBeforeLoading(check);
     if (displayNone) {
+      storeCountryToSessionStorage(check);
       const Data = await returningDataAfterFetching().catch((Error) => {
         console.error("Error:", Error);
       });
