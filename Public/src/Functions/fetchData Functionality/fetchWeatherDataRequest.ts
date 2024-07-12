@@ -4,20 +4,23 @@ export const fetchWeatherDataRequest = async (cityname: string) => {
       method: "GET",
       headers: {
         "x-rapidapi-host": "yahoo-weather5.p.rapidapi.com",
-        "x-rapidapi-key": "7d1d9057fbmshc5d335cf816170ep1b9fd0jsn39cb29b48c9d",
+        "x-rapidapi-key": `${process.env.API_KEY}`,
       },
     };
 
     const response = await fetch(
       `http://api.weatherapi.com/v1/current.json?key=94954c60ca7f45d3909120202240907&q=${cityname}&aqi=no`,
       options
-    ).then((Data) => {
-      return Data.json();
-    });
+    );
 
-    console.log(response);
+    if (response.ok) {
+      const Data = await response.json();
+      console.log(Data);
 
-    return response;
+      return Data;
+    }
+
+    alert("Error : While Fetching Data");
   } catch (error) {
     console.error("Error : ", error);
   }
