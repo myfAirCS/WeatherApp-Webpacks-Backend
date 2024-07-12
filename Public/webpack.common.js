@@ -1,5 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const dotenv = require("dotenv-webpack");
 
 const config = {
   entry: "./src/index.ts",
@@ -44,6 +45,9 @@ const config = {
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "src/index.html"),
       filename: "index.html",
+    }),
+    new dotenv({
+      path: "./src/.env",
     }),
   ],
 };
